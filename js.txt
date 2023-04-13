@@ -1,0 +1,21 @@
+let gameResult = document.getElementById("gameResult");
+let userInput = document.getElementById("userInput");
+let randomNumber = Math.ceil(Math.random() * 100);
+console.log(randomNumber);
+
+function checkGuess() {
+    let gussedNumber = parseInt(userInput.value);
+    if (gussedNumber > randomNumber) {
+        gameResult.textContent = "Input number is too high! please try again.";
+        gameResult.style.backgroundColor = "#42f595";
+    } else if (gussedNumber < randomNumber) {
+        gameResult.textContent = "Input number is too low! please try again.";
+        gameResult.style.backgroundColor = "#42f595";
+    } else if (gussedNumber === randomNumber) {
+        gameResult.textContent = "congratulations.. you have gussed the number.";
+        gameResult.style.backgroundColor = "#0a2d80"
+    } else {
+        gameResult.textContent = "Invalid Input is given";
+        gameResult.style.backgroundColor = "red";
+    }
+}
